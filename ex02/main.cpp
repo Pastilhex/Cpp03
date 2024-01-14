@@ -6,39 +6,44 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:10:00 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/14 18:46:55 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/14 18:03:48 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main( void ) {
 	ClapTrap ivo("Ivo");
 	ClapTrap joao("João");
-	ClapTrap heitor;
-	ClapTrap nuno;
-	heitor = ivo;
-	nuno = ClapTrap("Nuno");
+	ClapTrap daniel;
+	daniel = ivo;
 	
-	// heitor.attack("ivo");
-	// ivo.takeDamage(0);
-	
-	
-	
-	// ivo.attack("João");
-	// joao.takeDamage(2);
-	
-	// joao.attack("Heitor");
-	// heitor.takeDamage(3);
-	// heitor.beRepaired(2);
-	
-	// ivo.attack("João");
-	// joao.takeDamage(2);
+	ScavTrap heitor("Heitor");	
+	ScavTrap nuno;
+	nuno = heitor;
 
+	heitor.attack("Ivo");
+	ivo.takeDamage(20);
+	joao.attack("Ivo");
+	ivo.takeDamage(20);
+	ivo.attack("João");
+	joao.takeDamage(0);
+	heitor.attack("João");
+	joao.takeDamage(20);
+	ivo.beRepaired(2);
+	heitor.takeDamage(1);
+	heitor.guardGate();
+	
 	// ivo.attack("João");
+	// joao.takeDamage(2);
+	// joao.takeDamage(3);
+	// ivo.attack("João");
+	// joao.takeDamage(2);
+	// joao.attack("Ivo");
 	// joao.takeDamage(5);
 	// ivo.beRepaired(2);
-	// joao.takeDamage(3);
+	// ivo.attack("João");
 	// joao.beRepaired(10);
 }
 

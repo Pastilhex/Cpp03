@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:10:27 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/14 18:40:15 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/14 18:18:14 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,22 @@ ClapTrap::ClapTrap( std::string const name ) : name(name), hitPoints(10), energy
 	std::cout << "ClapTrap " << this->name << " created by Constructor" << std::endl;
 }
 
-ClapTrap::ClapTrap( const ClapTrap& copy ) : name(copy.name), hitPoints(copy.hitPoints), energyPoints(copy.energyPoints), attackPoints(copy.attackPoints) {
+ClapTrap::ClapTrap(const ClapTrap& copy) {
 	std::cout << "ClapTrap copied!" << std::endl;
+	this->name = copy.name;
+	this->hitPoints = copy.hitPoints;
+	this->energyPoints = copy.energyPoints;
+	this->attackPoints = copy.attackPoints;
 }
 
-ClapTrap& ClapTrap::operator=( const ClapTrap& input ) {
+ClapTrap& ClapTrap::operator=(const ClapTrap& input) {
 	if (this != &input)
 	{
 		this->name = input.name;
 		this->hitPoints = input.hitPoints;
-		this->energyPoints = input.hitPoints;
+		this->energyPoints = input.energyPoints;
 		this->attackPoints = input.attackPoints;
-	}
+	}	
 	return *this;
 }
 
@@ -39,11 +43,11 @@ ClapTrap::~ClapTrap( void ) {
 	std::cout << "ClapTrap destroyed!" << std::endl;
 }
 
-void ClapTrap::attack( const std::string& target ) {
+void ClapTrap::attack(const std::string& target) {
 	std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attackPoints << " points of damage!" << std::endl;
 }
 
-void ClapTrap::takeDamage( unsigned int amount ) {
+void ClapTrap::takeDamage(unsigned int amount) {
 	if (this->energyPoints > 0 && this->hitPoints > 0)
 	{	std::cout << this->name << " took " << amount << " points of damage!" << std::endl;
 		this->hitPoints -= amount;
