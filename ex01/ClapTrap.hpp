@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:10:30 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/14 15:49:17 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/15 11:04:56 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ protected:
 	unsigned int attackPoints;
 
 public:
-	ClapTrap(void);
-	ClapTrap(std::string const name);
-	ClapTrap(const ClapTrap& copy);
-	ClapTrap& operator=(const ClapTrap& input);
+	ClapTrap( void );
+	ClapTrap( std::string const name );
+	ClapTrap( const ClapTrap& copy );
+	ClapTrap& operator=( const ClapTrap& input );
 	~ClapTrap( void );
-	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+	void attack( const std::string& target );
+	void takeDamage( unsigned int amount );
+	void beRepaired( unsigned int amount );
+	void display_obj( void );
 };
 
 #endif

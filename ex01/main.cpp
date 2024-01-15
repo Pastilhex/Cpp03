@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:10:00 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/14 16:01:09 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/15 11:06:55 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int main( void ) {
 	ivo.beRepaired(2);
 	heitor.takeDamage(1);
 	heitor.guardGate();
+	heitor.display_obj();
 	
 	// ivo.attack("João");
 	// joao.takeDamage(2);

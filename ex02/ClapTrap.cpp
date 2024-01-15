@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:10:27 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/14 18:18:14 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/15 11:06:36 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,8 @@ ClapTrap::ClapTrap( std::string const name ) : name(name), hitPoints(10), energy
 	std::cout << "ClapTrap " << this->name << " created by Constructor" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& copy) {
-	std::cout << "ClapTrap copied!" << std::endl;
-	this->name = copy.name;
-	this->hitPoints = copy.hitPoints;
-	this->energyPoints = copy.energyPoints;
-	this->attackPoints = copy.attackPoints;
+ClapTrap::ClapTrap( const ClapTrap& copy ) : name(copy.name), hitPoints(copy.hitPoints), energyPoints(copy.energyPoints), attackPoints(copy.attackPoints) {
+	std::cout << "ClapTrap just been copied from " << copy.name << "!" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& input) {
@@ -70,4 +66,12 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << "You can't be repaired because you have no more energy points!" << std::endl;
 	else if (this->hitPoints <= 0)
 		std::cout << "You can't be repaired because you're already dead!" << std::endl;
+}
+
+void ClapTrap::display_obj( void ) {
+	std::cout << "*** ClapTrap Info *** " << std::endl;
+	std::cout << "ClapTrap name: " << this->name << "!" << std::endl;
+	std::cout << "ClapTrap hitPoints: " << this->hitPoints << "!" << std::endl;
+	std::cout << "ClapTrap energyPoints: " << this->energyPoints << "!" << std::endl;	
+	std::cout << "ClapTrap attackPoints: " << this->attackPoints << "!" << std::endl;	
 }
