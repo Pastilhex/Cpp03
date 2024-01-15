@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:10:27 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/15 13:32:10 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/15 13:38:08 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& input) {
 		this->_hitPoints = input._hitPoints;
 		this->_energyPoints = input._energyPoints;
 		this->_attackPoints = input._attackPoints;
-	}
+	}	
 	return *this;
 }
 

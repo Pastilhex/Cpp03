@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:28:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/15 13:33:10 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/15 13:39:31 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ ScavTrap::ScavTrap( std::string const name ) : ClapTrap( name ) {
 
 ScavTrap::ScavTrap( const ScavTrap& copy ) : ClapTrap( copy ) {
 	std::cout << "ScavTrap copied!" << std::endl;
-	*this = copy;
+	this->_name = copy._name;
+	this->_hitPoints = copy._hitPoints;
+	this->_energyPoints = copy._energyPoints;
+	this->_attackPoints = copy._attackPoints;
 }
 
 ScavTrap& ScavTrap::operator=( const ScavTrap& input ) {

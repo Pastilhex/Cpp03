@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:28:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/14 18:19:26 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/15 13:39:50 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,34 @@
 
 ScavTrap::ScavTrap( void ) : ClapTrap() {
 	std::cout << "ScavTrap created by default Constructor" << std::endl;
-	this->name = "default";
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackPoints = 20;
+	this->_name = "default";
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackPoints = 20;
 }
 
 ScavTrap::ScavTrap( std::string const name ) : ClapTrap( name ) {
 	std::cout << "ScavTrap " << name << " created by Constructor" << std::endl;
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackPoints = 20;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackPoints = 20;
 }
 
 ScavTrap::ScavTrap( const ScavTrap& copy ) : ClapTrap( copy ) {
 	std::cout << "ScavTrap copied!" << std::endl;
-	this->name = copy.name;
-	this->hitPoints = copy.hitPoints;
-	this->energyPoints = copy.energyPoints;
-	this->attackPoints = copy.attackPoints;
+	this->_name = copy._name;
+	this->_hitPoints = copy._hitPoints;
+	this->_energyPoints = copy._energyPoints;
+	this->_attackPoints = copy._attackPoints;
 }
 
 ScavTrap& ScavTrap::operator=( const ScavTrap& input ) {
 	if (this != &input)
 	{
-		this->name = input.name;
-		this->hitPoints = input.hitPoints;
-		this->energyPoints = input.energyPoints;
-		this->attackPoints = input.attackPoints;
+		this->_name = input._name;
+		this->_hitPoints = input._hitPoints;
+		this->_energyPoints = input._energyPoints;
+		this->_attackPoints = input._attackPoints;
 	}	
 	return *this;
 }
@@ -52,7 +52,7 @@ ScavTrap::~ScavTrap( void ) {
 }
 
 void ScavTrap::attack( const std::string& target ) {
-	std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attackPoints << " points of damage!" << std::endl;
+	std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attackPoints << " points of damage!" << std::endl;
 }
 
 void ScavTrap::guardGate( void ) {
