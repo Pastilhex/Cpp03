@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:28:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/15 13:39:50 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:18:00 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ ScavTrap::ScavTrap( void ) : ClapTrap() {
 
 ScavTrap::ScavTrap( std::string const name ) : ClapTrap( name ) {
 	std::cout << "ScavTrap " << name << " created by Constructor" << std::endl;
+	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackPoints = 20;

@@ -2,7 +2,7 @@ NAME = claptrap
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
-FLAGSXX = -Wall -Wextra -Werror -g -std=c++98
+FLAGSXX = -Wall -Wextra -Werror -g -std=c++98 -Wshadow #-Wno-shadow
 
 all: $(NAME)
 

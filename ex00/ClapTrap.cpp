@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:10:27 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/15 13:28:52 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:16:13 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,16 @@ void ClapTrap::attack( const std::string& target ) {
 	std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackPoints << " points of damage!" << std::endl;
 }
 
-void ClapTrap::takeDamage( unsigned int amount ) {
+void ClapTrap::takeDamage(unsigned int amount) {
 	if (this->_energyPoints > 0 && this->_hitPoints > 0)
 	{	std::cout << this->_name << " took " << amount << " points of damage!" << std::endl;
 		this->_hitPoints -= amount;
 		this->_energyPoints--;
 	}
 	else if (this->_energyPoints <= 0)
-		std::cout << "You can't attack because you're out of energy!" << std::endl;
+		std::cout << this->_name << " can't attack because his out of energy!" << std::endl;
 	else if (this->_hitPoints <= 0)
-		std::cout << "You can't take more damaged! You're already dead!" << std::endl;
+		std::cout << this->_name << " can't take more damaged! His already dead!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
@@ -63,9 +63,9 @@ void ClapTrap::beRepaired(unsigned int amount) {
 		this->_energyPoints--;
 	}
 	else if (this->_energyPoints <= 0)
-		std::cout << "You can't be repaired because you have no more energy points!" << std::endl;
+		std::cout << this->_name << " can't be repaired because you have no more energy points!" << std::endl;
 	else if (this->_hitPoints <= 0)
-		std::cout << "You can't be repaired because you're already dead!" << std::endl;
+		std::cout << this->_name << " can't be repaired because you're already dead!" << std::endl;
 }
 
 void ClapTrap::display_obj( void ) {

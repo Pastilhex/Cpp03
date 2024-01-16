@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 16:05:42 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/15 13:36:11 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:19:00 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ FragTrap::FragTrap( void ) : ClapTrap () {
 	this->_attackPoints = 30;
 }
 
-FragTrap::FragTrap( std::string const name ) {
+FragTrap::FragTrap( std::string const name ) : ClapTrap( name ) {
 	std::cout << "FragTrap " << this->_name << " created by Constructor" << std::endl;
 	this->_name = name;
 	this->_hitPoints = 100;

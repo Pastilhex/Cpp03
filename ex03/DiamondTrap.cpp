@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 13:09:03 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/15 15:07:29 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:06:31 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 
-DiamondTrap::DiamondTrap( void ) : ClapTrap("Default_diamond_clap_name") {
+DiamondTrap::DiamondTrap( void ) : ClapTrap(), ScavTrap(), FragTrap() {
 	std::cout << "DiamondTrap created by default Constructor" << std::endl;
 	this->_name = "Default_diamond_clap_name";
 	this->_hitPoints = FragTrap::_hitPoints;
@@ -22,9 +22,10 @@ DiamondTrap::DiamondTrap( void ) : ClapTrap("Default_diamond_clap_name") {
 	this->_attackPoints = FragTrap::_attackPoints;
 }
 
-DiamondTrap::DiamondTrap( std::string const name ) : ClapTrap(name + "_clap_name") {
-	std::cout << "DiamondTrap created by default Constructor" << std::endl;
-	this->_name = name;
+DiamondTrap::DiamondTrap( std::string const dName ) : ClapTrap( dName ), ScavTrap( dName ), FragTrap( dName ) {
+	std::cout << "DiamondTrap " << dName << " created by Constructor" << std::endl;
+	this->_name = dName;
+	ClapTrap::_name = dName + "_clap_name";
 	this->_hitPoints = FragTrap::_hitPoints;
 	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackPoints = FragTrap::_attackPoints;
@@ -48,9 +49,13 @@ DiamondTrap& DiamondTrap::operator=( const DiamondTrap& input ) {
 }
 
 DiamondTrap::~DiamondTrap( void ) {
-	
+	std::cout << "DiamonTrap destroyd!" << std::endl;
+}
+
+void DiamondTrap::attack( const std::string& target ) {
+	ScavTrap::attack(target);
 }
 
 void DiamondTrap::whoAmI() {
-	std::cout << "My Diamond name is " << this->_name << " and my Clap name is " ClapTrap::_name << "." << std::endl;
+	std::cout << "My Diamond name is " << this->_name << " and my Clap name is " << ClapTrap::_name << "." << std::endl;
 }

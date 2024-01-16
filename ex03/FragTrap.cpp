@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 16:05:42 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/15 15:07:23 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/16 13:56:54 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap( void ) : ClapTrap () {
+FragTrap::FragTrap( void ) : ClapTrap() {
 	std::cout << "FragTrap created by default Constructor" << std::endl;
 	this->_name = "default";
 	this->_hitPoints = 100;
@@ -22,7 +22,7 @@ FragTrap::FragTrap( void ) : ClapTrap () {
 	this->_attackPoints = 30;
 }
 
-FragTrap::FragTrap( std::string const name ) {
+FragTrap::FragTrap( std::string const name ) : ClapTrap( name ) {
 	std::cout << "FragTrap " << this->_name << " created by Constructor" << std::endl;
 	this->_name = name;
 	this->_hitPoints = 100;
@@ -51,6 +51,10 @@ FragTrap& FragTrap::operator=( const FragTrap& input ) {
 
 FragTrap::~FragTrap( void ) {
 	std::cout << "FragTrap destroyed!" << std::endl;
+}
+
+void FragTrap::attack( const std::string& target ) {
+	std::cout << "FragTrap " << this->_name << " attacks " << target << ", causing " << this->_attackPoints << " points of damage!" << std::endl;
 }
 
 void FragTrap::highFivesGuys( void ) {

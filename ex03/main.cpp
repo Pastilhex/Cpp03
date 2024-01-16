@@ -6,60 +6,61 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:10:00 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/15 12:22:11 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:13:44 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main( void ) {
-	// ClapTrap ivo("Ivo");
-	// ClapTrap joao("João");
-	// ClapTrap daniel;
-	// daniel = ivo;
-	// ScavTrap heitor("Heitor");
-	// ScavTrap nuno;
-	// nuno = heitor;
 
-	ClapTrap obj1("ivo");
-	ScavTrap obj2("ivo");
-	FragTrap obj3("ivo");
+	ClapTrap obj1("Ivo");
+	ClapTrap obj2("Marques");
 
-	obj1.attack("João");
-	// obj1.guardGate();
-	// obj1.highFivesGuys();
+	ScavTrap obj3("Joao");
+	ScavTrap obj4("Almeida");
 
-	obj2.attack("João");
-	obj2.guardGate();
-	// obj2.highFivesGuys();
+	FragTrap obj5("Heitor");
+	FragTrap obj6("Maciel");
 
-	// obj3.attack("João");
-	// obj3.guardGate();
-	obj3.highFivesGuys();
+	DiamondTrap obj7("Nuno");
+	DiamondTrap obj8("Soares");
 
-	// ivo.takeDamage(20);
-	// joao.attack("Ivo");
-	// ivo.takeDamage(20);
-	// ivo.attack("João");
-	// joao.takeDamage(0);
-	// heitor.attack("João");
-	// joao.takeDamage(20);
-	// ivo.beRepaired(2);
-	// heitor.takeDamage(1);
-	// heitor.guardGate();
-	// heitor.display_obj();
+	std::cout << std::endl;
 	
-	// ivo.attack("João");
-	// joao.takeDamage(2);
-	// joao.takeDamage(3);
-	// ivo.attack("João");
-	// joao.takeDamage(2);
-	// joao.attack("Ivo");
-	// joao.takeDamage(5);
-	// ivo.beRepaired(2);
-	// ivo.attack("João");
-	// joao.beRepaired(10);
+	obj1.attack("João");
+	obj3.takeDamage(0);
+	obj3.beRepaired(0);
+	obj3.display_obj();
+	obj1.takeDamage(10);
+	obj1.display_obj();
+	obj1.takeDamage(10);
+	
+	// obj2.attack("Heitor");
+	// obj5.takeDamage(20);
+	// obj5.takeDamage(50);
+	// obj5.beRepaired(20);
+	// obj5.display_obj();
+
+	// obj3.guardGate();
+	// obj4.guardGate();
+
+	// obj5.attack("Almeida");
+	// obj5.highFivesGuys();
+
+	// obj6.attack("Maciel");
+	// obj6.highFivesGuys();
+
+	// obj7.attack("Ivo");
+	// obj7.takeDamage(20);	
+	// obj7.beRepaired(20);
+	// obj7.guardGate();
+	// obj7.highFivesGuys();
+	// obj7.display_obj();
+	// obj7.whoAmI();
+
 }
 

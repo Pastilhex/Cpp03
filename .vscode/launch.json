@@ -8,7 +8,7 @@
 			"name": "(gdb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/ex02/claptrap",
+			"program": "${workspaceFolder}/ex03/claptrap",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",

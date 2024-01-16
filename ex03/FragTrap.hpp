@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 16:05:54 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/15 14:52:40 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/16 12:54:58 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ public:
 	FragTrap( const FragTrap& copy );
 	FragTrap& operator=( const FragTrap& input );
 	~FragTrap( void );
+	void attack( const std::string& target );
 	void highFivesGuys( void );
 };
 
